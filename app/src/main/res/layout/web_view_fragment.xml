@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_game"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/sitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/webview"
+        android:textSize="20sp"
+        android:layout_gravity="center_horizontal"
+        android:padding="15dp"
+        android:textColor="@color/game_color"
+        android:checked="true"
+        app:thumbTextPadding="20dp"
+        app:thumbTint="@color/game_color"
+        />
+
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        >
+    </WebView>
+
+    <LinearLayout
+        android:id="@+id/gameBox"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="@string/start_game"
+            android:layout_gravity="center"
+            android:textColor="@color/game_color"
+            android:textSize="25sp"
+            />
+        <Button
+            android:id="@+id/startGame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="START"
+            android:textSize="18sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

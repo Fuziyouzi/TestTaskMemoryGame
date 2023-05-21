@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/background_game"
+    android:layout_gravity="center"
+    android:padding="15dp"
+    >
+
+    <TextView
+        android:id="@+id/textDialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:paddingVertical="5dp"
+        android:textColor="@color/game_color"
+        android:textStyle="bold"
+        android:textSize="25sp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/dialogSc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/score"
+            android:paddingVertical="10dp"
+            android:textColor="@color/game_color"
+            android:textStyle="bold"
+            android:textSize="22sp"/>
+        <TextView
+            android:id="@+id/dialogScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            android:paddingVertical="15dp"
+            android:textColor="@color/game_color"
+            android:textStyle="bold"
+            android:textSize="22sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/exitBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.3"
+        android:textSize="20sp"
+        android:layout_marginHorizontal="55dp"
+        android:text="@string/exit"/>
+
+</LinearLayout>
+
+
+
+</LinearLayout>

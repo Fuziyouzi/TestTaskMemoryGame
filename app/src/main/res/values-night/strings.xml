@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="score">Score:</string>
+    <string name="tap_to_start">Tap to Start</string>
+    <string name="yellow">Yellow</string>
+    <string name="red">Red</string>
+    <string name="green">Green</string>
+    <string name="pacman">Pacman</string>
+    <string name="attempts">Attempts:</string>
+    <string name="webview">WebView</string>
+    <string name="start_game">Start Game</string>
+</resources>
