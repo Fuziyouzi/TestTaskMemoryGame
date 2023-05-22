@@ -2,6 +2,8 @@ package com.example.wwatesttask.ui
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.os.bundleOf
+import androidx.fragment.app.setFragmentResult
 import androidx.fragment.app.viewModels
 import com.example.wwatesttask.R
 import com.example.wwatesttask.databinding.WebViewFragmentBinding
@@ -52,6 +54,15 @@ class WebViewFragment : BaseFragment<WebViewFragmentBinding>(
                 bin.sitch.isChecked = true
                 bin.gameBox.visibility = View.VISIBLE
                 bin.webView.visibility = View.GONE
+            }
+        }
+        bin.hardLevel.setOnCheckedChangeListener { _, i ->
+
+            when (i) {
+                R.id.easy ->  setFragmentResult("requestKey", bundleOf("data" to 1))
+                R.id.medium ->  setFragmentResult("requestKey", bundleOf("data" to 2))
+                R.id.hard -> setFragmentResult("requestKey", bundleOf("data" to 3))
+
             }
         }
 

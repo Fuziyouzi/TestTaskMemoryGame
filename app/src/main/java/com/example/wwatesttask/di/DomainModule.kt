@@ -18,4 +18,5 @@ interface DomainModule {
 
     @Binds
     fun bindsRepo(repositoryImp: RepositoryImp): Repository
+
 }

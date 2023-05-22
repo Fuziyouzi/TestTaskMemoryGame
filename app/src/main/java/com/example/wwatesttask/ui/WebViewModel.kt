@@ -1,6 +1,5 @@
 package com.example.wwatesttask.ui
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -15,7 +14,9 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class WebViewModel @Inject constructor(private val repository: Repository) : ViewModel() {
+class WebViewModel @Inject constructor(
+    private val repository: Repository
+) : ViewModel() {
 
     private val urlL: MutableLiveData<String> = MutableLiveData()
     val url: LiveData<String> = urlL
@@ -30,6 +31,7 @@ class WebViewModel @Inject constructor(private val repository: Repository) : Vie
     fun getConfig() = viewModelScope.launch(Dispatchers.Main) {
         configL.publishEvent(repository.getConfig())
     }
+
 
 
 }

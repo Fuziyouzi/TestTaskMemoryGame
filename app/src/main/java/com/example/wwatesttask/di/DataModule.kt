@@ -18,4 +18,5 @@ object DataModule {
 
     @Provides
     fun providesConfig(remoteConfig: RemoteConfig): Config = remoteConfig
+
 }

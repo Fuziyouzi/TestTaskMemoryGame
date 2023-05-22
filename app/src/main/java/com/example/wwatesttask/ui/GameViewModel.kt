@@ -44,28 +44,34 @@ class GameViewModel @Inject constructor(
     }
 
     fun upScore() {
-        if (score.value == 10){
+        if (score.value == 9){
             endGame.value = "You Win"
-
         } else {
             score.value = score.value?.plus(1)
         }
     }
+    fun lvl(lvl: Int) {
+        when (lvl) {
+            1 -> attempts.value = 22
+            2 -> attempts.value = 16
+            else -> attempts.value = 10
 
+        }
+
+    }
     fun attemptsTry() {
         if(attempts.value == 1){
             endGame.value = "You loose"
-
         } else{
             attempts.value = attempts.value?.minus(1)
         }
     }
 
    private fun setGame(){
-        list.value = listOfImages.getList().shuffled()
-        idIm.value = GameState(100, false )
-        score.value = 0
-        attempts.value = 12
+       list.value = listOfImages.getList().shuffled()
+       idIm.value = GameState(100, false )
+       score.value = 0
+       attempts.value = 22
     }
 
 

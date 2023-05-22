@@ -47,11 +47,38 @@
             android:textColor="@color/game_color"
             android:textSize="25sp"
             />
+        <RadioGroup
+            android:id="@+id/hardLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <RadioButton
+                android:id="@+id/easy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/easy"
+                android:checked="true"
+                android:textColor="@color/white"/>
+            <RadioButton
+                android:id="@+id/medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/medium"
+                android:layout_marginHorizontal="15dp"
+                android:textColor="@color/white"/>
+            <RadioButton
+                android:id="@+id/hard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hard"
+                android:textColor="@color/white"/>
+        </RadioGroup>
         <Button
             android:id="@+id/startGame"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="START"
+            android:text="@string/start"
             android:textSize="18sp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"/>

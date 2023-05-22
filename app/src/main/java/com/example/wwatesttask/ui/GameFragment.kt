@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.fragment.app.setFragmentResultListener
 import androidx.fragment.app.viewModels
 import com.example.wwatesttask.R
 import com.example.wwatesttask.databinding.GameFragmentBinding
@@ -28,6 +29,11 @@ class GameFragment : BaseFragment<GameFragmentBinding>(
 
     private val vm: GameViewModel by viewModels()
 
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -191,8 +197,11 @@ class GameFragment : BaseFragment<GameFragmentBinding>(
         vm.endGameL.observe(viewLifecycleOwner) {
             gameDialog(it)
         }
-        parentFragmentManager.popBackStack(WebViewFragment.frag, 0)
+        setFragmentResultListener("requestKey") { _, bundle ->
+            val result = bundle.getInt("data")
+            vm.lvl(result)
 
+        }
     }
 
 
@@ -207,7 +216,7 @@ class GameFragment : BaseFragment<GameFragmentBinding>(
         scoreDialog.text = bin.score.text
         val exit = dialog.findViewById<Button>(R.id.exitBtn)
         exit.setOnClickListener {
-            parentFragmentManager.popBackStack(WebViewFragment.frag, 0)
+            parentFragmentManager.popBackStack()
             dialog.dismiss()
         }
     }
