@@ -32,10 +32,10 @@ class WebViewFragment : BaseFragment<WebViewFragmentBinding>(
 
             //Added for testing easily could be removed
             bin.sitch.setOnCheckedChangeListener { _, b ->
-                bin.webView.loadUrl(it)
-                if (!b) {
+                if (b) {
                     bin.gameBox.visibility = View.GONE
                     bin.webView.visibility = View.VISIBLE
+                    bin.webView.loadUrl("https://www.pinterest.com/search/pins/?q=adnroid&rs=typed")
                 } else {
                     bin.gameBox.visibility = View.VISIBLE
                     bin.webView.visibility = View.GONE
@@ -46,18 +46,15 @@ class WebViewFragment : BaseFragment<WebViewFragmentBinding>(
         vm.config.observeEvent(viewLifecycleOwner) {
             if (it) {
                 Snackbar.make(view, "Config is true", Snackbar.LENGTH_LONG).show()
-                bin.sitch.isChecked = false
                 bin.gameBox.visibility = View.GONE
                 bin.webView.visibility = View.VISIBLE
             } else {
                 Snackbar.make(view, "Config is false", Snackbar.LENGTH_LONG).show()
-                bin.sitch.isChecked = true
                 bin.gameBox.visibility = View.VISIBLE
                 bin.webView.visibility = View.GONE
             }
         }
         bin.hardLevel.setOnCheckedChangeListener { _, i ->
-
             when (i) {
                 R.id.easy ->  setFragmentResult("requestKey", bundleOf("data" to 1))
                 R.id.medium ->  setFragmentResult("requestKey", bundleOf("data" to 2))
